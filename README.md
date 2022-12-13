@@ -11,15 +11,17 @@
 * Make sure this database uses "5432" port while running
 
 ## Setup backend
+* Install JAVA using its documentation - https://www.java.com/en/download/help/windows_manual_download.html
 * Open any JAVA IDE (preferably Eclipse)
-* Import maven project which is located inside "story" folder ("/server")
+* Import maven project which is located inside "story" folder - "server"
 * Navigate to "src/main/java/com/springboot/storieswithimages"
 * Run "StoriesWithImagesApplication.java"
 * Your backend server will up on port 9090
 
 ## Setup frontned
-* Open IDE (preferably VS Code)
-* Open folder which is located inside "story" folder ("/frontend")
+* Install Node using its documentation - https://nodejs.org/en/download/
+* Open IDE (preferably VSCode)
+* Open folder which is located inside "story" folder - "frontend"
 * Run command in teminal from the root of the folder
 ```
     npm install
