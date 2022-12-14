@@ -58,7 +58,7 @@ public class StoryController {
 	@PostMapping("/stories")
 	public ResponseEntity<Story> createStory(@RequestBody Story story) {
 		try {
-			Story _story = storyRepository.save(new Story(story.getTitle(), story.getDescription(), 0, 0));
+			Story _story = storyRepository.save(new Story(story.getTitle(), story.getDescription(), 0, 0, 0));
 			convert(story.getTitle(), story.getDescription());
 			return new ResponseEntity<>(_story, HttpStatus.CREATED);
 		} catch (Exception e) {
@@ -76,6 +76,7 @@ public class StoryController {
 			_story.setDescription(story.getDescription());
 			_story.setLike(story.getLike());
 			_story.setDislike(story.getDislike());
+			_story.setView(story.getView());
 			return new ResponseEntity<>(storyRepository.save(_story), HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

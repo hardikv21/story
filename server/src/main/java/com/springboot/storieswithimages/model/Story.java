@@ -22,15 +22,19 @@ public class Story {
 	@Column(name = "dislike")
 	private int dislike;
 	
+	@Column(name = "view")
+	private int view;
+	
 	public Story() {
 
 	}
 
-	public Story(String title, String description, int like, int dislike) {
+	public Story(String title, String description, int like, int dislike, int view) {
 		this.title = title;
 		this.description = description;
 		this.like = like;
 		this.dislike = dislike;
+		this.view = view;
 	}
 	
 	public long getId() {
@@ -67,6 +71,14 @@ public class Story {
 
 	public void setDislike(int dislike) {
 		this.dislike = dislike;
+	}
+	
+	public int getView() {
+		return view;
+	}
+
+	public void setView(int view) {
+		this.view = view;
 	}
 	
 	@Override
