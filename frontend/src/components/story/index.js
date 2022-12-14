@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import StoryDataService from '../../services/story.service';
 import { Card, CardContent, Typography, CardActions, Button } from '@mui/material';
+import PieComponent from './pie';
 
 function StoryComponent() {
     const id = useParams().id;
@@ -33,7 +34,7 @@ function StoryComponent() {
     };
 
     return (
-        <Card sx={{ width: '80%', margin: '2% auto' }}>
+        <Card sx={{ width: '80%', margin: '2% auto', boxShadow: 'none' }}>
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                     { story.title }
@@ -45,6 +46,8 @@ function StoryComponent() {
                 <Typography variant="body2" color="text.secondary">
                     Total Views - { story.view }
                 </Typography>
+                <br />
+                <PieComponent like={story.like} dislike={story.dislike} />
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
                 <Button
