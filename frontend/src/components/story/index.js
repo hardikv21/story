@@ -25,6 +25,13 @@ function StoryComponent() {
             .catch((error) => console.log(error));
     };
 
+    const onDownload = () => {
+        const link = document.createElement('a');
+        link.download = `${story.title}.png`;
+        link.href = `${process.env.PUBLIC_URL}/story-images/${story.title}.png`;
+        link.click();
+    };
+
     return (
         <Card sx={{ width: '80%', margin: '2% auto' }}>
             <CardContent>
@@ -40,6 +47,11 @@ function StoryComponent() {
                 </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
+                <Button
+                    variant="outlined"
+                    size="small"
+                    onClick={onDownload}
+                >Download Story</Button>
                 <Button
                     variant="outlined"
                     size="small"

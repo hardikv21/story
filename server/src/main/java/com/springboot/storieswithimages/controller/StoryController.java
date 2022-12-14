@@ -130,7 +130,7 @@ public class StoryController {
         graphics2d.drawString(description, 0, fontmetrics.getAscent());
         graphics2d.dispose();
         try {
-            ImageIO.write(image, "png", new File("../story-images/" + title + ".png"));
+            ImageIO.write(image, "png", new File("../frontend/public/story-images/" + title + ".png"));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
