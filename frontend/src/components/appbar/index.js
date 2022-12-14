@@ -13,18 +13,7 @@ import {
     ListItemButton,
     ListItemText
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-
-const pages = [
-    {
-        name: "Stories",
-        link: "/stories"
-    },
-    {
-        name: "Add",
-        link: "/add"
-    }
-];
+import { Menu as MenuIcon } from '@mui/icons-material';
 
 function NavbarComponent() {
     const [drawer, setDrawer] = useState(false);
@@ -79,15 +68,11 @@ function NavbarComponent() {
                                 onClose={toggleDrawer()}
                             >
                                 <List>
-                                    {
-                                        pages.map((page) => (
-                                            <ListItem key={page.name} disablePadding>
-                                                <ListItemButton href={page.link}>
-                                                    <ListItemText primary={page.name} />
-                                                </ListItemButton>
-                                            </ListItem>
-                                        ))
-                                    }
+                                    <ListItem disablePadding>
+                                        <ListItemButton href="/add">
+                                            <ListItemText primary="Add a Story" />
+                                        </ListItemButton>
+                                    </ListItem>
                                 </List>
                             </Drawer>
                         </Fragment>
@@ -112,17 +97,12 @@ function NavbarComponent() {
                         Story
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {
-                            pages.map((page) => (
-                                <Button
-                                    key={page.name}
-                                    href={page.link}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
-                                >
-                                    {page.name}
-                                </Button>
-                            ))
-                        }
+                        <Button
+                            href="/add"
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                            Add a Story
+                        </Button>
                     </Box>
 
                 </Toolbar>

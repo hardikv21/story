@@ -3,6 +3,7 @@ import NavbarComponent from './components/appbar';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StoriesListComponent from './components/storiesList';
 import StoryComponent from './components/story';
+import AddStoryComponent from './components/addStory';
 
 function App() {
   return (
@@ -11,8 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<StoriesListComponent />} />
-          <Route path="/stories" element={<StoriesListComponent />} />
-          <Route path="/add" element={<h1>Add Page</h1>} />
+          <Route path="/add" element={<AddStoryComponent />} />
           <Route path="/stories/:id" element={<StoryComponent />} />
         </Routes>
       </BrowserRouter>

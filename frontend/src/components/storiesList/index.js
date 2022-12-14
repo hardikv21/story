@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import StoryDataService from '../../services/story.service';
 import { Box, Card, CardContent, Typography, CardActions, IconButton, Button } from '@mui/material';
-import { Send, ThumbUpOffAlt, ThumbDownOffAlt } from '@mui/icons-material';
+import { Send, ThumbUpOffAlt, ThumbDownOffAlt, RemoveRedEye } from '@mui/icons-material';
 
 function StoriesListComponent() {
     const [stories, setStories] = useState([]);
@@ -58,6 +58,10 @@ function StoriesListComponent() {
                                 <ThumbDownOffAlt />
                             </IconButton>
                             { story.dislike }
+                            <IconButton>
+                                <RemoveRedEye />
+                            </IconButton>
+                            { story.view }
                         </CardActions>
                     </Card>
                 </Box>
