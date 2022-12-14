@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import com.springboot.storieswithimages.model.Story;
 import com.springboot.storieswithimages.repository.StoryRepository;
 
+@CrossOrigin(origins = {"http://localhost:3000"})
 @RestController
 @RequestMapping("/api")
 public class StoryController {
